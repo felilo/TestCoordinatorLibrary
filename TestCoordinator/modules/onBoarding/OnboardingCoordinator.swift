@@ -28,7 +28,7 @@ class OnboardingCoordinator: CoordinatorSUI<OnboardingRouter> {
     }
     
     func showHomeCoordinator() {
-        let coordinator = HomeCoordinator(parent: self)
+        let coordinator = HomeCoordinator(withParent: self)
         coordinator.start()
     }
 }
