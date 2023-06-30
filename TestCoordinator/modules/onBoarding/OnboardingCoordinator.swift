@@ -15,10 +15,9 @@ class OnboardingCoordinator: CoordinatorSUI<OnboardingRouter> {
         super.init(parent: parent, presentationStyle: .fullScreen)
     }
     
-    
     override func start(animated: Bool) {
         let vm = FirstViewModel(coordinator: self)
-        parent.startChildCoordinator(self, animated: animated)
+        presentCoordinator(animated: animated)
         show(.firstStep(viewModel: vm))
     }
     

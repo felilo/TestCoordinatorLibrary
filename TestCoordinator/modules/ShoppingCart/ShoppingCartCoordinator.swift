@@ -11,7 +11,7 @@ import ALCoordinator
 class ShoppingCartCoordinator: CoordinatorSUI<ShoppingCartRouter> {
     
     override func start(animated: Bool = true) {
-        parent.startChildCoordinator(self)
+        presentCoordinator(animated: animated)
         show(.home(vm: .init(coordinator: self)))
     }
     

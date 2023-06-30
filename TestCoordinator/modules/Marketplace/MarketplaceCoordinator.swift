@@ -11,7 +11,7 @@ import ALCoordinator
 class MarketplaceCoordinator: CoordinatorSUI<MarketplaceRouter> {
     
     override func start(animated: Bool = true) {
-        parent.startChildCoordinator(self)
+        presentCoordinator(animated: animated)
         show(.home(viewModel: .init(coordinator: self)))
     }
     

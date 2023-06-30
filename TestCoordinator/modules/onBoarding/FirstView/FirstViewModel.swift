@@ -20,5 +20,4 @@ class FirstViewModel: ObservableObject {
     func goSecondStep() {
         coordinator.showStep2()
     }
-    
 }

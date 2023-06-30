@@ -18,6 +18,7 @@ class MainCoordinator: BaseCoordinator {
     
     override func start(animated: Bool = false) {
         let coordinator = OnboardingCoordinator(parent: self)
+        presentCoordinator(animated: animated)
         coordinator.start(animated: animated)
     }
 }

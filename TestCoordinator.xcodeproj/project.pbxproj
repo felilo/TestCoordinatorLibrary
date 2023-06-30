@@ -585,7 +585,7 @@
 			repositoryURL = "https://github.com/felilo/ALCoordinator";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.7;
+				minimumVersion = 0.0.9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
