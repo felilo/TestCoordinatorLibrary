@@ -11,7 +11,6 @@
 		D95B00FE2A463530005B10D1 /* HomeTabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95B00FD2A463530005B10D1 /* HomeTabbarViewModel.swift */; };
 		D96CD64A2A44E40500305CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96CD6492A44E40500305CD9 /* Assets.xcassets */; };
 		D96CD64E2A44E40500305CD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96CD64D2A44E40500305CD9 /* Preview Assets.xcassets */; };
-		D96CD6562A44E42500305CD9 /* ALCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = D96CD6552A44E42500305CD9 /* ALCoordinator */; };
 		D96CD6592A44E45700305CD9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6582A44E45700305CD9 /* MainCoordinator.swift */; };
 		D96CD65E2A44E49B00305CD9 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD65D2A44E49B00305CD9 /* OnboardingRouter.swift */; };
 		D96CD6622A44E52C00305CD9 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6612A44E52C00305CD9 /* SecondView.swift */; };
@@ -30,6 +29,7 @@
 		D96CD6832A44EC4F00305CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6822A44EC4F00305CD9 /* AppDelegate.swift */; };
 		D96CD6852A44EC7000305CD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6842A44EC7000305CD9 /* SceneDelegate.swift */; };
 		D96CD6882A44F44700305CD9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6872A44F44700305CD9 /* SplashScreenView.swift */; };
+		D989181E2A606BD100E3582F /* ALCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = D989181D2A606BD100E3582F /* ALCoordinator */; };
 		D9F68F3B2A49ED2100199CA2 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F68F3A2A49ED2100199CA2 /* ShoppingCartView.swift */; };
 		D9F68F3D2A49ED2E00199CA2 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F68F3C2A49ED2E00199CA2 /* ShoppingCartViewModel.swift */; };
 		D9F68F412A49F3D400199CA2 /* ShoppingCartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F68F402A49F3D400199CA2 /* ShoppingCartCoordinator.swift */; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96CD6562A44E42500305CD9 /* ALCoordinator in Frameworks */,
+				D989181E2A606BD100E3582F /* ALCoordinator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +102,7 @@
 			children = (
 				D96CD6442A44E40400305CD9 /* TestCoordinator */,
 				D96CD6432A44E40400305CD9 /* Products */,
+				D98918102A60460600E3582F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +235,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D98918102A60460600E3582F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9F68F3E2A49EDA800199CA2 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +288,7 @@
 			);
 			name = TestCoordinator;
 			packageProductDependencies = (
-				D96CD6552A44E42500305CD9 /* ALCoordinator */,
+				D989181D2A606BD100E3582F /* ALCoordinator */,
 			);
 			productName = TestCoordinator;
 			productReference = D96CD6422A44E40400305CD9 /* TestCoordinator.app */;
@@ -311,7 +319,7 @@
 			);
 			mainGroup = D96CD6392A44E40400305CD9;
 			packageReferences = (
-				D96CD6542A44E42500305CD9 /* XCRemoteSwiftPackageReference "ALCoordinator" */,
+				D989181C2A606BD100E3582F /* XCRemoteSwiftPackageReference "ALCoordinator" */,
 			);
 			productRefGroup = D96CD6432A44E40400305CD9 /* Products */;
 			projectDirPath = "";
@@ -580,20 +588,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D96CD6542A44E42500305CD9 /* XCRemoteSwiftPackageReference "ALCoordinator" */ = {
+		D989181C2A606BD100E3582F /* XCRemoteSwiftPackageReference "ALCoordinator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/felilo/ALCoordinator";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
+				minimumVersion = 0.0.10;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D96CD6552A44E42500305CD9 /* ALCoordinator */ = {
+		D989181D2A606BD100E3582F /* ALCoordinator */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D96CD6542A44E42500305CD9 /* XCRemoteSwiftPackageReference "ALCoordinator" */;
+			package = D989181C2A606BD100E3582F /* XCRemoteSwiftPackageReference "ALCoordinator" */;
 			productName = ALCoordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
