@@ -1,34 +1,50 @@
 //
 //  SceneDelegate.swift
-//  TestCoordinator
 //
-//  Created by Andres Lozano on 22/06/23.
+//  Copyright (c) Andres F. Lozano
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import SwiftUI
-import ALCoordinator
+import SUICoordinator
 
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
-    
-    var mainCoordinator: MainCoordinator?
-    
-    var window: UIWindow?
-    
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        setupCoordinator(window: window, animated: true)
-    }
-    
-    private func setupCoordinator(window: UIWindow?, animated: Bool = false) {
-        mainCoordinator = .init()
-        setupWindow(controller: mainCoordinator?.root)
-        mainCoordinator?.start(animated: animated)
-        BaseCoordinator.mainCoordinator = mainCoordinator
-    }
-    
-    private func setupWindow(controller: UIViewController?) {
-        window?.rootViewController = controller
-        window?.makeKeyAndVisible()
-    }
+  
+  var mainCoordinator: MainCoordinator?
+  var window: UIWindow?
+  
+  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+    window = UIWindow(windowScene: windowScene)
+    setupCoordinator(window: window, animated: true)
+  }
+  
+  private func setupCoordinator(window: UIWindow?, animated: Bool = false) {
+    mainCoordinator = .init()
+    setupWindow(controller: mainCoordinator?.root)
+    BaseCoordinator.mainCoordinator = mainCoordinator
+    mainCoordinator?.start(animated: animated)
+  }
+  
+  private func setupWindow(controller: UIViewController?) {
+    window?.rootViewController = controller
+    window?.makeKeyAndVisible()
+  }
 }

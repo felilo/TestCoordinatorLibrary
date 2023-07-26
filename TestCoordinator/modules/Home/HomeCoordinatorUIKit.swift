@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  HomeCoordinatorUIKit.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,45 +22,46 @@
 //  THE SOFTWARE.
 //
 
-import SUICoordinator
-import SwiftUI
+import UIKCoordinator
+import UIKit
 
-class MainCoordinator: NavigationCoordinatable<MainRoute> {
-  
+class HomeCoordinatorUIKit: TabbarCoordinator<HomeRouter> {
+
   
   // ---------------------------------------------------------------------
   // MARK: Constructor
   // ---------------------------------------------------------------------
   
+
+  public init() {
+    super.init(
+      pages: PAGE.itemsSorted,
+      presentationStyle: .fullScreen
+    )
+    setupStyleTabbar()
+  }
+
   
-  init() {
-    super.init(parent: nil)
-    router.startFlow(route: .splash, animated: false)
+  // ---------------------------------------------------------------------
+  // MARK: Helper funcs
+  // ---------------------------------------------------------------------
+  
+
+  private func setupStyleTabbar() {
+    let appearance = UITabBarAppearance()
+    appearance.backgroundColor = .yellow
+    setTabBarItemColors(appearance.stackedLayoutAppearance)
+    setTabBarItemColors(appearance.inlineLayoutAppearance)
+    setTabBarItemColors(appearance.compactInlineLayoutAppearance)
+    tabController.tabBar.standardAppearance = appearance
+    UITabBar.appearance().scrollEdgeAppearance = appearance
+    UITabBar.appearance().isHidden = false
   }
   
-  
-  // ---------------------------------------------------------------------
-  // MARK: Coordinator
-  // ---------------------------------------------------------------------
-  
-  
-  override func start(animated: Bool = false) {
-    router.navigate(to: OnboardingCoordinator(), animated: animated)
+  private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
+    itemAppearance.normal.iconColor = .gray
+    itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+    itemAppearance.selected.iconColor = .red
+    itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
   }
-}
-
-
-
-enum MainRoute: NavigationRoute {
-  
-  case splash
-  
-  
-  // ---------------------------------------------------------------------
-  // MARK: NavigationRoute
-  // ---------------------------------------------------------------------
-  
-
-  var transition: NavigationTransitionStyle { .push }
-  func view() -> any View { SplashScreenView() }
 }

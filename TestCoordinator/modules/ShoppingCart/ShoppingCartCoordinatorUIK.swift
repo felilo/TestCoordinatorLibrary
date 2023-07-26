@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  ShoppingCartCoordinator2.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,45 +22,70 @@
 //  THE SOFTWARE.
 //
 
-import SUICoordinator
-import SwiftUI
+import UIKCoordinator
+import UIKit
 
-class MainCoordinator: NavigationCoordinatable<MainRoute> {
-  
-  
-  // ---------------------------------------------------------------------
-  // MARK: Constructor
-  // ---------------------------------------------------------------------
-  
-  
-  init() {
-    super.init(parent: nil)
-    router.startFlow(route: .splash, animated: false)
-  }
+class ShoppingCartCoordinatorUIK: NavigationCoordinatable<ShoppingCartCoordinatorUIK.ShoppingCartRouter> {
   
   
   // ---------------------------------------------------------------------
   // MARK: Coordinator
   // ---------------------------------------------------------------------
   
+
+  override func start(animated: Bool = true) {
+    router.startFlow(route: .home)
+  }
   
-  override func start(animated: Bool = false) {
-    router.navigate(to: OnboardingCoordinator(), animated: animated)
+  
+  // ---------------------------------------------------------------------
+  // MARK: Helper funcs
+  // ---------------------------------------------------------------------
+  
+  
+  func showCheckout() {
+    router.navigate(to: .checkout)
+  }
+  
+  
+  func finish() {
+    router.finishFlow(completion: nil)
   }
 }
 
 
 
-enum MainRoute: NavigationRoute {
-  
-  case splash
-  
+extension ShoppingCartCoordinatorUIK {
   
   // ---------------------------------------------------------------------
-  // MARK: NavigationRoute
+  // MARK: Enums
   // ---------------------------------------------------------------------
   
-
-  var transition: NavigationTransitionStyle { .push }
-  func view() -> any View { SplashScreenView() }
+  
+  enum ShoppingCartRouter: NavigationRoute {
+    
+    case home
+    case checkout
+    
+    
+    // ---------------------------------------------------------------------
+    // MARK: NavigationRouter
+    // ---------------------------------------------------------------------
+    
+    
+    var transition: NavigationTransitionStyle { .push }
+    
+    func view() -> UIViewController {
+      switch self {
+        case .home:
+          let ctrl = UIViewController()
+          ctrl.view.backgroundColor = .red
+          return ctrl
+        case .checkout:
+          let ctrl = UIViewController()
+          ctrl.view.backgroundColor = .blue
+          return ctrl
+      }
+    }
+  }
 }

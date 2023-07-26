@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  HomeCoordinatorSUI.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,10 +22,20 @@
 //  THE SOFTWARE.
 //
 
+
 import SUICoordinator
 import SwiftUI
+import Combine
 
-class MainCoordinator: NavigationCoordinatable<MainRoute> {
+class HomeCoordinatorSUI: TabbarCoordinator<HomeRouter> {
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+  
+  var cancelables = Set<AnyCancellable>()
   
   
   // ---------------------------------------------------------------------
@@ -33,34 +43,37 @@ class MainCoordinator: NavigationCoordinatable<MainRoute> {
   // ---------------------------------------------------------------------
   
   
-  init() {
-    super.init(parent: nil)
-    router.startFlow(route: .splash, animated: false)
+  public init() {
+    // Custom Tabbar view
+    let viewModel = HomeTabbarViewModel()
+    let view = HomeTabbarView(viewModel: viewModel)
+    
+    super.init(
+      customView: view,
+      pages: PAGE.itemsSorted,
+      presentationStyle: .popover
+    )
+    
+    viewModel.$currentPage
+      .sink { [weak self] page in
+        self?.currentPage = page
+      }.store(in: &cancelables)
+    
+    setup()
+  }
+  
+  public init(default: Bool ) {
+    // Default Tabbar view
+    super.init(pages: PAGE.itemsSorted)
   }
   
   
   // ---------------------------------------------------------------------
-  // MARK: Coordinator
+  // MARK: Helper funcs
   // ---------------------------------------------------------------------
   
   
-  override func start(animated: Bool = false) {
-    router.navigate(to: OnboardingCoordinator(), animated: animated)
+  func setup() {
+    UITabBar.appearance().isHidden = true
   }
-}
-
-
-
-enum MainRoute: NavigationRoute {
-  
-  case splash
-  
-  
-  // ---------------------------------------------------------------------
-  // MARK: NavigationRoute
-  // ---------------------------------------------------------------------
-  
-
-  var transition: NavigationTransitionStyle { .push }
-  func view() -> any View { SplashScreenView() }
 }
