@@ -24,7 +24,7 @@
 
 import SUICoordinator
 
-class MarketplaceCoordinator: NavigationCoordinatable<MarketplaceRouter> {
+class MarketplaceCoordinator: NavigationCoordinator<MarketplaceRoute> {
   
   
   // ---------------------------------------------------------------------
@@ -46,6 +46,7 @@ class MarketplaceCoordinator: NavigationCoordinatable<MarketplaceRouter> {
   
   
   func showShoppingCart() {
-    router.navigate(to: ShoppingCartCoordinator(presentationStyle: .popover))
+    let coordinator = ShoppingCartCoordinator()
+    router.navigate(to: coordinator)
   }
 }

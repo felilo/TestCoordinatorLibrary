@@ -1,5 +1,5 @@
 //
-//  SettingsRouter.swift
+//  OnboardingRouter.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,14 +22,13 @@
 //  THE SOFTWARE.
 //
 
-
 import SUICoordinator
 import SwiftUI
 
-
-enum SettingsRouter: NavigationRoute {
+enum OnboardingRoute: NavigationRoute {
   
-  case home(viewModel: SettingsHomeViewModel)
+  case firstStep(viewModel: FirstViewModel)
+  case secondStep(viewModel: SecondViewModel)
   
   
   // ---------------------------------------------------------------------
@@ -39,15 +38,19 @@ enum SettingsRouter: NavigationRoute {
   
   var transition: NavigationTransitionStyle {
     switch self {
-      case .home:
+      case .firstStep:
         return .push
+      case .secondStep:
+        return .modal
     }
   }
   
   func view() -> any View {
     switch self {
-      case .home(let vm):
-        return SettingsHomeView(viewModel: vm)
+      case .firstStep(let vm):
+        return FirstView(viewModel: vm)
+      case .secondStep(let vm):
+        return SecondView(viewModel: vm)
     }
   }
 }

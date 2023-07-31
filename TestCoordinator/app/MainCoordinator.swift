@@ -25,7 +25,7 @@
 import SUICoordinator
 import SwiftUI
 
-class MainCoordinator: NavigationCoordinatable<MainRoute> {
+class MainCoordinator: NavigationCoordinator<MainRoute> {
   
   
   // ---------------------------------------------------------------------
@@ -45,7 +45,19 @@ class MainCoordinator: NavigationCoordinatable<MainRoute> {
   
   
   override func start(animated: Bool = false) {
-    router.navigate(to: OnboardingCoordinator(), animated: animated)
+    let coordinator = OnboardingCoordinator(presentationStyle: .fullScreen)
+    router.navigate(to: coordinator, animated: animated)
+  }
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: Helper funcs
+  // ---------------------------------------------------------------------
+  
+
+  func startOnboardingFromNotification(message: String) {
+    let coordinator = HomeCoordinatorSUI(currentPage: .marketplace)
+    coordinator.forcePresentation()
   }
 }
 

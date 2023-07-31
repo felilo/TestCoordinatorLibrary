@@ -25,7 +25,7 @@
 import SUICoordinator
 import SwiftUI
 
-class ShoppingCartCoordinator: NavigationCoordinatable<ShoppingCartCoordinator.ShoppingCartRouter> {
+class ShoppingCartCoordinator: NavigationCoordinator<ShoppingCartCoordinator.ShoppingCartRoute> {
   
   // ---------------------------------------------------------------------
   // MARK: Coordinator
@@ -56,7 +56,8 @@ class ShoppingCartCoordinator: NavigationCoordinatable<ShoppingCartCoordinator.S
   
   
   func showHomeCoordinatorUIK() {
-    router.navigate(to: HomeCoordinatorUIKit())
+    let coordinator = HomeCoordinatorUIKit()
+    router.navigate(to: coordinator)
   }
 }
 
@@ -69,7 +70,7 @@ extension ShoppingCartCoordinator {
   // ---------------------------------------------------------------------
   
 
-  enum ShoppingCartRouter: NavigationRoute {
+  enum ShoppingCartRoute: NavigationRoute {
     
     case home(vm: ShoppingCartViewModel)
     case checkout(vm: CheckoutViewModel)
@@ -83,7 +84,6 @@ extension ShoppingCartCoordinator {
     var transition: NavigationTransitionStyle {
       switch self {
         default: return .push
-          
       }
     }
     

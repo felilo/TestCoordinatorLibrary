@@ -1,5 +1,5 @@
 //
-//  HomeRouter.swift
+//  MarketplaceRouter.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -24,11 +24,11 @@
 
 import Foundation
 import SUICoordinator
+import SwiftUI
 
-enum HomeRouter: CaseIterable, TabbarPage {
+enum MarketplaceRoute: NavigationRoute {
   
-  case marketplace
-  case settings
+  case home(viewModel: MarketplaceViewModel)
   
   
   // ---------------------------------------------------------------------
@@ -36,49 +36,17 @@ enum HomeRouter: CaseIterable, TabbarPage {
   // ---------------------------------------------------------------------
   
   
-  func coordinator(parent: Coordinator) -> Coordinator {
+  var transition: NavigationTransitionStyle {
     switch self {
-      case .settings:
-        return SettingsCoordinator(parent: parent)
-      case .marketplace:
-        return MarketplaceCoordinator(parent: parent)
+      case .home:
+        return .push
     }
   }
   
-  
-  // ---------------------------------------------------------------------
-  // MARK: TabbarPageDataSource
-  // ---------------------------------------------------------------------
-  
-  
-  public var title: String {
+  func view() -> any View {
     switch self {
-      case .marketplace:
-        return "Marketplace"
-      case .settings:
-        return "Settings"
+      case .home(let vm):
+        return MarketplaceHomeView(viewModel: vm)
     }
-  }
-  
-  public var icon: String {
-    switch self {
-      case .marketplace:
-        return "house"
-      case .settings:
-        return "gearshape"
-    }
-  }
-  
-  public var position: Int {
-    switch self {
-      case .marketplace:
-        return 0
-      case .settings:
-        return 1
-    }
-  }
-  
-  static var itemsSorted: [HomeRouter] {
-    Self.allCases.sorted(by: { $0.position < $1.position })
   }
 }

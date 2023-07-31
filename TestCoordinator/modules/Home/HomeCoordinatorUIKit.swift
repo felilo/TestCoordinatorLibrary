@@ -25,7 +25,7 @@
 import UIKCoordinator
 import UIKit
 
-class HomeCoordinatorUIKit: TabbarCoordinator<HomeRouter> {
+class HomeCoordinatorUIKit: TabbarCoordinator<HomeRoute> {
 
   
   // ---------------------------------------------------------------------
@@ -33,9 +33,10 @@ class HomeCoordinatorUIKit: TabbarCoordinator<HomeRouter> {
   // ---------------------------------------------------------------------
   
 
-  public init() {
+  public init(currentPage: PAGE = .marketplace) {
     super.init(
       pages: PAGE.itemsSorted,
+      currentPage: currentPage,
       presentationStyle: .fullScreen
     )
     setupStyleTabbar()

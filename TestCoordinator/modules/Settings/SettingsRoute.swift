@@ -1,5 +1,5 @@
 //
-//  MarketplaceRouter.swift
+//  SettingsRouter.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,13 +22,14 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+
 import SUICoordinator
 import SwiftUI
 
-enum MarketplaceRouter: NavigationRoute {
+
+enum SettingsRoute: NavigationRoute {
   
-  case home(viewModel: MarketplaceViewModel)
+  case home(viewModel: SettingsHomeViewModel)
   
   
   // ---------------------------------------------------------------------
@@ -46,7 +47,7 @@ enum MarketplaceRouter: NavigationRoute {
   func view() -> any View {
     switch self {
       case .home(let vm):
-        return MarketplaceHomeView(viewModel: vm)
+        return SettingsHomeView(viewModel: vm)
     }
   }
 }

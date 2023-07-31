@@ -12,24 +12,23 @@
 		D96CD64A2A44E40500305CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96CD6492A44E40500305CD9 /* Assets.xcassets */; };
 		D96CD64E2A44E40500305CD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96CD64D2A44E40500305CD9 /* Preview Assets.xcassets */; };
 		D96CD6592A44E45700305CD9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6582A44E45700305CD9 /* MainCoordinator.swift */; };
-		D96CD65E2A44E49B00305CD9 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD65D2A44E49B00305CD9 /* OnboardingRouter.swift */; };
+		D96CD65E2A44E49B00305CD9 /* OnboardingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD65D2A44E49B00305CD9 /* OnboardingRoute.swift */; };
 		D96CD6622A44E52C00305CD9 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6612A44E52C00305CD9 /* SecondView.swift */; };
 		D96CD6662A44E55000305CD9 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6652A44E55000305CD9 /* FirstView.swift */; };
 		D96CD6682A44E60100305CD9 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6672A44E60100305CD9 /* SecondViewModel.swift */; };
 		D96CD66A2A44E64200305CD9 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6692A44E64200305CD9 /* FirstViewModel.swift */; };
 		D96CD66C2A44E75E00305CD9 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD66B2A44E75E00305CD9 /* OnboardingCoordinator.swift */; };
 		D96CD66F2A44E7E700305CD9 /* HomeCoordinatorSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD66E2A44E7E700305CD9 /* HomeCoordinatorSUI.swift */; };
-		D96CD6712A44E80800305CD9 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6702A44E80800305CD9 /* HomeRouter.swift */; };
+		D96CD6712A44E80800305CD9 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6702A44E80800305CD9 /* HomeRoute.swift */; };
 		D96CD6752A44E90200305CD9 /* MarketplaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6742A44E90200305CD9 /* MarketplaceCoordinator.swift */; };
-		D96CD6772A44E92900305CD9 /* MarketplaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6762A44E92900305CD9 /* MarketplaceRouter.swift */; };
+		D96CD6772A44E92900305CD9 /* MarketplaceRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6762A44E92900305CD9 /* MarketplaceRoute.swift */; };
 		D96CD67A2A44E9E100305CD9 /* MarketplaceHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6792A44E9E100305CD9 /* MarketplaceHomeView.swift */; };
 		D96CD67F2A44EA3A00305CD9 /* SettingsHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD67C2A44EA3A00305CD9 /* SettingsHomeView.swift */; };
-		D96CD6802A44EA3A00305CD9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD67D2A44EA3A00305CD9 /* SettingsRouter.swift */; };
+		D96CD6802A44EA3A00305CD9 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD67D2A44EA3A00305CD9 /* SettingsRoute.swift */; };
 		D96CD6812A44EA3A00305CD9 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD67E2A44EA3A00305CD9 /* SettingsCoordinator.swift */; };
 		D96CD6832A44EC4F00305CD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6822A44EC4F00305CD9 /* AppDelegate.swift */; };
 		D96CD6852A44EC7000305CD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6842A44EC7000305CD9 /* SceneDelegate.swift */; };
 		D96CD6882A44F44700305CD9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96CD6872A44F44700305CD9 /* SplashScreenView.swift */; };
-		D98918222A60A1B300E3582F /* ALCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = D98918212A60A1B300E3582F /* ALCoordinator */; };
 		D9A531A82A6B53F100E3E734 /* HomeCoordinatorUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A531A72A6B53F100E3E734 /* HomeCoordinatorUIKit.swift */; };
 		D9AE1FBD2A6C123300817CDA /* ShoppingCartCoordinatorUIK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE1FBC2A6C123300817CDA /* ShoppingCartCoordinatorUIK.swift */; };
 		D9F68F3B2A49ED2100199CA2 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F68F3A2A49ED2100199CA2 /* ShoppingCartView.swift */; };
@@ -49,19 +48,19 @@
 		D96CD64B2A44E40500305CD9 /* TestCoordinator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestCoordinator.entitlements; sourceTree = "<group>"; };
 		D96CD64D2A44E40500305CD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D96CD6582A44E45700305CD9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		D96CD65D2A44E49B00305CD9 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		D96CD65D2A44E49B00305CD9 /* OnboardingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRoute.swift; sourceTree = "<group>"; };
 		D96CD6612A44E52C00305CD9 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		D96CD6652A44E55000305CD9 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D96CD6672A44E60100305CD9 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		D96CD6692A44E64200305CD9 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		D96CD66B2A44E75E00305CD9 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		D96CD66E2A44E7E700305CD9 /* HomeCoordinatorSUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorSUI.swift; sourceTree = "<group>"; };
-		D96CD6702A44E80800305CD9 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		D96CD6702A44E80800305CD9 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		D96CD6742A44E90200305CD9 /* MarketplaceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceCoordinator.swift; sourceTree = "<group>"; };
-		D96CD6762A44E92900305CD9 /* MarketplaceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceRouter.swift; sourceTree = "<group>"; };
+		D96CD6762A44E92900305CD9 /* MarketplaceRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceRoute.swift; sourceTree = "<group>"; };
 		D96CD6792A44E9E100305CD9 /* MarketplaceHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceHomeView.swift; sourceTree = "<group>"; };
 		D96CD67C2A44EA3A00305CD9 /* SettingsHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHomeView.swift; sourceTree = "<group>"; };
-		D96CD67D2A44EA3A00305CD9 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		D96CD67D2A44EA3A00305CD9 /* SettingsRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
 		D96CD67E2A44EA3A00305CD9 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		D96CD6822A44EC4F00305CD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D96CD6842A44EC7000305CD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98918222A60A1B300E3582F /* ALCoordinator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +163,7 @@
 			children = (
 				D96CD6602A44E4EA00305CD9 /* SecondView */,
 				D96CD65F2A44E4DF00305CD9 /* FirstView */,
-				D96CD65D2A44E49B00305CD9 /* OnboardingRouter.swift */,
+				D96CD65D2A44E49B00305CD9 /* OnboardingRoute.swift */,
 				D96CD66B2A44E75E00305CD9 /* OnboardingCoordinator.swift */,
 			);
 			path = onBoarding;
@@ -193,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D95B00FF2A463546005B10D1 /* HomeTabbarView */,
-				D96CD6702A44E80800305CD9 /* HomeRouter.swift */,
+				D96CD6702A44E80800305CD9 /* HomeRoute.swift */,
 				D96CD66E2A44E7E700305CD9 /* HomeCoordinatorSUI.swift */,
 				D9A531A72A6B53F100E3E734 /* HomeCoordinatorUIKit.swift */,
 			);
@@ -205,7 +203,7 @@
 			children = (
 				D96CD67B2A44EA3A00305CD9 /* Home */,
 				D96CD67E2A44EA3A00305CD9 /* SettingsCoordinator.swift */,
-				D96CD67D2A44EA3A00305CD9 /* SettingsRouter.swift */,
+				D96CD67D2A44EA3A00305CD9 /* SettingsRoute.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -215,7 +213,7 @@
 			children = (
 				D96CD6782A44E9D000305CD9 /* Home */,
 				D96CD6742A44E90200305CD9 /* MarketplaceCoordinator.swift */,
-				D96CD6762A44E92900305CD9 /* MarketplaceRouter.swift */,
+				D96CD6762A44E92900305CD9 /* MarketplaceRoute.swift */,
 			);
 			path = Marketplace;
 			sourceTree = "<group>";
@@ -291,7 +289,6 @@
 			);
 			name = TestCoordinator;
 			packageProductDependencies = (
-				D98918212A60A1B300E3582F /* ALCoordinator */,
 			);
 			productName = TestCoordinator;
 			productReference = D96CD6422A44E40400305CD9 /* TestCoordinator.app */;
@@ -351,7 +348,7 @@
 			files = (
 				D96CD6752A44E90200305CD9 /* MarketplaceCoordinator.swift in Sources */,
 				D95B00FC2A4634FF005B10D1 /* HomeTabbarView.swift in Sources */,
-				D96CD6802A44EA3A00305CD9 /* SettingsRouter.swift in Sources */,
+				D96CD6802A44EA3A00305CD9 /* SettingsRoute.swift in Sources */,
 				D96CD6682A44E60100305CD9 /* SecondViewModel.swift in Sources */,
 				D9F68F3D2A49ED2E00199CA2 /* ShoppingCartViewModel.swift in Sources */,
 				D96CD6662A44E55000305CD9 /* FirstView.swift in Sources */,
@@ -360,10 +357,10 @@
 				D9F68F4C2A49FDF100199CA2 /* SettingsHomeViewModel.swift in Sources */,
 				D9F68F4A2A49FC3D00199CA2 /* CheckoutView.swift in Sources */,
 				D9F68F492A49FC3D00199CA2 /* CheckoutViewModel.swift in Sources */,
-				D96CD6772A44E92900305CD9 /* MarketplaceRouter.swift in Sources */,
+				D96CD6772A44E92900305CD9 /* MarketplaceRoute.swift in Sources */,
 				D96CD6622A44E52C00305CD9 /* SecondView.swift in Sources */,
 				D9F68F412A49F3D400199CA2 /* ShoppingCartCoordinator.swift in Sources */,
-				D96CD65E2A44E49B00305CD9 /* OnboardingRouter.swift in Sources */,
+				D96CD65E2A44E49B00305CD9 /* OnboardingRoute.swift in Sources */,
 				D9AE1FBD2A6C123300817CDA /* ShoppingCartCoordinatorUIK.swift in Sources */,
 				D96CD67A2A44E9E100305CD9 /* MarketplaceHomeView.swift in Sources */,
 				D96CD6882A44F44700305CD9 /* SplashScreenView.swift in Sources */,
@@ -376,7 +373,7 @@
 				D96CD6852A44EC7000305CD9 /* SceneDelegate.swift in Sources */,
 				D9F68F3B2A49ED2100199CA2 /* ShoppingCartView.swift in Sources */,
 				D9F68F452A49F81200199CA2 /* MarketplaceViewModel.swift in Sources */,
-				D96CD6712A44E80800305CD9 /* HomeRouter.swift in Sources */,
+				D96CD6712A44E80800305CD9 /* HomeRoute.swift in Sources */,
 				D9A531A82A6B53F100E3E734 /* HomeCoordinatorUIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,9 +496,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestCoordinator/TestCoordinator.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestCoordinator/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y9VN2UD669;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCoordinator/Info.plist;
@@ -515,13 +514,14 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sf.afl.TestCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Provisional Devep Multimoney";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -536,9 +536,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TestCoordinator/TestCoordinator.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestCoordinator/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y9VN2UD669;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestCoordinator/Info.plist;
@@ -552,13 +554,14 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sf.afl.TestCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Provisional Devep Multimoney";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -589,13 +592,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D98918212A60A1B300E3582F /* ALCoordinator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ALCoordinator;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D96CD63A2A44E40400305CD9 /* Project object */;
 }

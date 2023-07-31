@@ -23,10 +23,8 @@
 //
 
 import SUICoordinator
-import UIKit
-import SwiftUI
 
-class OnboardingCoordinator: NavigationCoordinatable<OnboardingRouter> {
+class OnboardingCoordinator: NavigationCoordinator<OnboardingRoute> {
   
   
   // ---------------------------------------------------------------------
@@ -50,14 +48,11 @@ class OnboardingCoordinator: NavigationCoordinatable<OnboardingRouter> {
   
   func showStep2() {
     let vm = SecondViewModel(coordinator: self)
-    router.navigate(
-      to: .secondStep(viewModel: vm),
-      transitionStyle: .push
-    )
+    router.navigate(to: .secondStep(viewModel: vm))
   }
   
   func showHomeCoordinator() {
-    let coordinator = HomeCoordinatorSUI()
+    let coordinator = HomeCoordinatorSUI(currentPage: .settings)
     router.navigate(to: coordinator)
   }
 }

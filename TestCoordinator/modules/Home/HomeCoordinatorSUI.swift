@@ -27,7 +27,7 @@ import SUICoordinator
 import SwiftUI
 import Combine
 
-class HomeCoordinatorSUI: TabbarCoordinator<HomeRouter> {
+class HomeCoordinatorSUI: TabbarCoordinator<HomeRoute> {
   
   
   // ---------------------------------------------------------------------
@@ -43,15 +43,17 @@ class HomeCoordinatorSUI: TabbarCoordinator<HomeRouter> {
   // ---------------------------------------------------------------------
   
   
-  public init() {
+  public init(currentPage: PAGE = .marketplace) {
     // Custom Tabbar view
     let viewModel = HomeTabbarViewModel()
     let view = HomeTabbarView(viewModel: viewModel)
+    viewModel.currentPage = currentPage
     
     super.init(
       customView: view,
       pages: PAGE.itemsSorted,
-      presentationStyle: .popover
+      currentPage: currentPage,
+      presentationStyle: .fullScreen
     )
     
     viewModel.$currentPage

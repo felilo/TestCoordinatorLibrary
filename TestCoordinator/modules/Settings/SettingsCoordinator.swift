@@ -24,7 +24,7 @@
 
 import SUICoordinator
 
-class SettingsCoordinator: NavigationCoordinatable<SettingsRouter> {
+class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
   
   
   // ---------------------------------------------------------------------

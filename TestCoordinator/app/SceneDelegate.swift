@@ -34,6 +34,11 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
     setupCoordinator(window: window, animated: true)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+      self?.mainCoordinator?.startOnboardingFromNotification(message: "Hello")
+    }
+    
   }
   
   private func setupCoordinator(window: UIWindow?, animated: Bool = false) {

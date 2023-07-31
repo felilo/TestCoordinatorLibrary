@@ -1,5 +1,5 @@
 //
-//  OnboardingRouter.swift
+//  HomeRouter.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -24,12 +24,11 @@
 
 import Foundation
 import SUICoordinator
-import SwiftUI
 
-enum OnboardingRouter: NavigationRoute {
+enum HomeRoute: CaseIterable, TabbarPage {
   
-  case firstStep(viewModel: FirstViewModel)
-  case secondStep(viewModel: SecondViewModel)
+  case marketplace
+  case settings
   
   
   // ---------------------------------------------------------------------
@@ -37,21 +36,49 @@ enum OnboardingRouter: NavigationRoute {
   // ---------------------------------------------------------------------
   
   
-  var transition: NavigationTransitionStyle {
+  func coordinator(parent: Coordinator) -> Coordinator {
     switch self {
-      case .firstStep:
-        return .push
-      case .secondStep:
-        return .push
+      case .settings:
+        return SettingsCoordinator(parent: parent)
+      case .marketplace:
+        return MarketplaceCoordinator(parent: parent)
     }
   }
   
-  func view() -> any View {
+  
+  // ---------------------------------------------------------------------
+  // MARK: TabbarPageDataSource
+  // ---------------------------------------------------------------------
+  
+  
+  public var title: String {
     switch self {
-      case .firstStep(let vm):
-        return FirstView(viewModel: vm)
-      case .secondStep(let vm):
-        return SecondView(viewModel: vm)
+      case .marketplace:
+        return "Marketplace"
+      case .settings:
+        return "Settings"
     }
+  }
+  
+  public var icon: String {
+    switch self {
+      case .marketplace:
+        return "house"
+      case .settings:
+        return "gearshape"
+    }
+  }
+  
+  public var position: Int {
+    switch self {
+      case .marketplace:
+        return 0
+      case .settings:
+        return 1
+    }
+  }
+  
+  static var itemsSorted: [HomeRoute] {
+    Self.allCases.sorted(by: { $0.position < $1.position })
   }
 }

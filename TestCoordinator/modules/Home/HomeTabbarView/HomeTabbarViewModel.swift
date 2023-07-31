@@ -32,13 +32,19 @@ class HomeTabbarViewModel: ObservableObject {
   // ---------------------------------------------------------------------
   
   
-  @Published var currentPage =  HomeRouter.marketplace
+  @Published var currentPage =  HomeRoute.marketplace
   
   // ---------------------------------------------------------------------
   // MARK: Properties
   // ---------------------------------------------------------------------
   
   
-  let pages = HomeRouter.itemsSorted
+  let pages = HomeRoute.itemsSorted
+  
+  
+  func setCurrentPage(_ value: HomeRoute) {
+    guard value != currentPage else { return }
+    currentPage = value
+  }
   
 }

@@ -25,7 +25,7 @@
 import UIKCoordinator
 import UIKit
 
-class ShoppingCartCoordinatorUIK: NavigationCoordinatable<ShoppingCartCoordinatorUIK.ShoppingCartRouter> {
+class ShoppingCartCoordinatorUIK: NavigationCoordinator<ShoppingCartCoordinatorUIK.ShoppingCartRoute> {
   
   
   // ---------------------------------------------------------------------
@@ -62,7 +62,7 @@ extension ShoppingCartCoordinatorUIK {
   // ---------------------------------------------------------------------
   
   
-  enum ShoppingCartRouter: NavigationRoute {
+  enum ShoppingCartRoute: NavigationRoute {
     
     case home
     case checkout
