@@ -26,24 +26,29 @@ import SwiftUI
 
 
 struct SecondView: View {
-    
-    @StateObject var viewModel: SecondViewModel
-    
-    
-    init(viewModel: SecondViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
-    }
-    
-    var body: some View {
-        ZStack {
-          Color.red.ignoresSafeArea()
-          VStack {
-            Text("Hello, Second View!")
-            Button("Go home!") {
-              viewModel.goHome()
-            }
-          }
-            
+  
+  @StateObject var viewModel: SecondViewModel
+  
+  
+  init(viewModel: SecondViewModel) {
+    self._viewModel = .init(wrappedValue: viewModel)
+  }
+  
+  var body: some View {
+    ZStack {
+      Color.red.ignoresSafeArea()
+      VStack(spacing: 12) {
+        
+        Text("Hello, Second View!")
+        
+        Button("Go home!") {
+          viewModel.goHome()
         }
+        
+        Button("Dismiss modal!") {
+          viewModel.close()
+        }
+      }
     }
+  }
 }

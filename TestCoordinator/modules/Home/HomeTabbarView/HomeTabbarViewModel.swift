@@ -27,22 +27,25 @@ import Foundation
 class HomeTabbarViewModel: ObservableObject {
   
   
+  typealias Route = HomeRoute2
+  
+  
   // ---------------------------------------------------------------------
   // MARK: Published
   // ---------------------------------------------------------------------
   
   
-  @Published var currentPage =  HomeRoute.marketplace
+  @Published var currentPage: Route =  .marketplace
   
   // ---------------------------------------------------------------------
   // MARK: Properties
   // ---------------------------------------------------------------------
   
   
-  let pages = HomeRoute.itemsSorted
+  let pages = Route.itemsSorted
   
   
-  func setCurrentPage(_ value: HomeRoute) {
+  func setCurrentPage(_ value: Route) {
     guard value != currentPage else { return }
     currentPage = value
   }

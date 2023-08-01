@@ -22,10 +22,12 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
-import SUICoordinator
+import UIKit
+import UIKCoordinator
 
 enum HomeRoute: CaseIterable, TabbarPage {
+  
+  typealias Img = UIImage
   
   case marketplace
   case settings
@@ -36,12 +38,12 @@ enum HomeRoute: CaseIterable, TabbarPage {
   // ---------------------------------------------------------------------
   
   
-  func coordinator(parent: Coordinator) -> Coordinator {
+  func coordinator() -> Coordinator {
     switch self {
       case .settings:
-        return SettingsCoordinator(parent: parent)
+        return SettingsCoordinator()
       case .marketplace:
-        return MarketplaceCoordinator(parent: parent)
+        return MarketplaceCoordinator()
     }
   }
   
@@ -60,12 +62,12 @@ enum HomeRoute: CaseIterable, TabbarPage {
     }
   }
   
-  public var icon: String {
+  public var icon: UIImage {
     switch self {
       case .marketplace:
-        return "house"
+        return .init(systemName: "house")!
       case .settings:
-        return "gearshape"
+        return .init(systemName: "gearshape")!
     }
   }
   
@@ -76,9 +78,5 @@ enum HomeRoute: CaseIterable, TabbarPage {
       case .settings:
         return 1
     }
-  }
-  
-  static var itemsSorted: [HomeRoute] {
-    Self.allCases.sorted(by: { $0.position < $1.position })
   }
 }

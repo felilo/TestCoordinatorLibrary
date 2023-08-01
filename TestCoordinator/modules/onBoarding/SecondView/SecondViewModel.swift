@@ -52,4 +52,8 @@ class SecondViewModel: ObservableObject {
   func goHome() {
     coordinator.showHomeCoordinator()
   }
+  
+  func close() {
+    coordinator.router.dismiss()
+  }
 }

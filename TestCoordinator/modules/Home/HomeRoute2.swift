@@ -1,5 +1,5 @@
 //
-//  HomeCoordinatorSUI.swift
+//  HomeRoute2.swift
 //
 //  Copyright (c) Andres F. Lozano
 //
@@ -22,60 +22,60 @@
 //  THE SOFTWARE.
 //
 
-
-import SUICoordinator
 import SwiftUI
-import Combine
+import SUICoordinator
 
-class HomeCoordinatorSUI: TabbarCoordinator<HomeRoute2> {
+enum HomeRoute2: CaseIterable, TabbarPage {
+  
+  case marketplace
+  case settings
   
   
   // ---------------------------------------------------------------------
-  // MARK: Properties
+  // MARK: NavigationRouter
   // ---------------------------------------------------------------------
   
   
-  var cancelables = Set<AnyCancellable>()
-  
-  
-  // ---------------------------------------------------------------------
-  // MARK: Constructor
-  // ---------------------------------------------------------------------
-  
-  
-  public init(currentPage: PAGE = .marketplace) {
-    // Custom Tabbar view
-    let viewModel = HomeTabbarViewModel()
-    let view = HomeTabbarView(viewModel: viewModel)
-    viewModel.currentPage = currentPage
-    
-    super.init(
-      customView: view,
-      pages: PAGE.itemsSorted,
-      currentPage: currentPage,
-      presentationStyle: .fullScreen
-    )
-    
-    viewModel.$currentPage
-      .sink { [weak self] page in
-        self?.currentPage = page
-      }.store(in: &cancelables)
-    
-    setup()
-  }
-  
-  public init(default: Bool ) {
-    // Default Tabbar view
-    super.init(pages: PAGE.itemsSorted)
+  func coordinator() -> Coordinator {
+    switch self {
+      case .settings:
+        return SettingsCoordinator()
+      case .marketplace:
+        return MarketplaceCoordinator()
+    }
   }
   
   
   // ---------------------------------------------------------------------
-  // MARK: Helper funcs
+  // MARK: TabbarPageDataSource
   // ---------------------------------------------------------------------
   
   
-  func setup() {
-    UITabBar.appearance().isHidden = true
+  public var title: String {
+    switch self {
+      case .marketplace:
+        return "Marketplace"
+      case .settings:
+        return "Settings"
+    }
+  }
+  
+  public var icon: Image {
+    switch self {
+      case .marketplace:
+        return .init(systemName: "house")
+      case .settings:
+        return .init(systemName: "gearshape")
+    }
+  }
+  
+  public var position: Int {
+    switch self {
+      case .marketplace:
+        return 0
+      case .settings:
+        return 1
+    }
   }
 }
+

@@ -27,7 +27,7 @@ import SwiftUI
 struct HomeTabbarView: View {
   
   
-  typealias Page = HomeRoute
+  typealias Page = HomeRoute2
   @StateObject private var viewModel: HomeTabbarViewModel
   
   
@@ -57,7 +57,7 @@ struct HomeTabbarView: View {
     } label: {
       ZStack(alignment: .bottom) {
         VStack(alignment: .center , spacing: 2) {
-          Image(systemName: page.icon)
+          page.icon
             .resizable()
             .scaledToFit()
             .frame(width: widthIcon, height: widthIcon)
