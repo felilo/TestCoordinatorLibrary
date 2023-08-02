@@ -25,21 +25,37 @@
 import SwiftUI
 
 struct MarketplaceHomeView: View {
-    
-    @StateObject var viewModel: MarketplaceViewModel
-
-
-    init(viewModel: MarketplaceViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
+  
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+  
+  @StateObject var viewModel: MarketplaceViewModel
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
+  
+  
+  init(viewModel: MarketplaceViewModel) {
+    self._viewModel = .init(wrappedValue: viewModel)
+  }
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
+  
+  
+  var body: some View {
+    VStack {
+      Text("Hello, marketplace!")
+      Button("Show shopping cart") {
+        viewModel.showShoppingCart()
+      }
     }
     
-    var body: some View {
-        VStack {
-            Text("Hello, marketplace!")
-            Button("Show shopping cart") {
-                viewModel.showShoppingCart()
-            }
-        }
-        
-    }
+  }
 }

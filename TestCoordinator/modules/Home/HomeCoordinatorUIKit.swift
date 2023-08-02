@@ -25,14 +25,14 @@
 import UIKCoordinator
 import UIKit
 
-class HomeCoordinatorUIKit: TabbarCoordinator<HomeRoute> {
-
+class HomeCoordinatorUIKit: TabbarCoordinator<HomeRouteUIK> {
+  
   
   // ---------------------------------------------------------------------
   // MARK: Constructor
   // ---------------------------------------------------------------------
   
-
+  
   public init(currentPage: PAGE = .marketplace) {
     super.init(
       pages: PAGE.itemsSorted,
@@ -41,13 +41,13 @@ class HomeCoordinatorUIKit: TabbarCoordinator<HomeRoute> {
     )
     setupStyleTabbar()
   }
-
+  
   
   // ---------------------------------------------------------------------
   // MARK: Helper funcs
   // ---------------------------------------------------------------------
   
-
+  
   private func setupStyleTabbar() {
     let appearance = UITabBarAppearance()
     appearance.backgroundColor = .yellow

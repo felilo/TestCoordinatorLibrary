@@ -25,9 +25,7 @@
 import UIKit
 import UIKCoordinator
 
-enum HomeRoute: CaseIterable, TabbarPage {
-  
-  typealias Img = UIImage
+enum HomeRouteUIK: CaseIterable, TabbarPage {
   
   case marketplace
   case settings

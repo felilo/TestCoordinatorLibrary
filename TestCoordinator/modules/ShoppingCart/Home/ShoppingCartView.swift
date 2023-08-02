@@ -25,22 +25,37 @@
 import SwiftUI
 
 struct ShoppingCartView: View {
-    
-    @StateObject var viewModel: ShoppingCartViewModel
-    
-    
-    init(viewModel: ShoppingCartViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
+  
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+  
+  @StateObject var viewModel: ShoppingCartViewModel
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
+  
+  
+  init(viewModel: ShoppingCartViewModel) {
+    self._viewModel = .init(wrappedValue: viewModel)
+  }
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
+  
+  
+  var body: some View {
+    VStack {
+      Text("Hello, ShoppingCartView!")
+      Button("Show checkout") {
+        viewModel.finish()
+      }
     }
     
-    
-    var body: some View {
-        VStack {
-            Text("Hello, ShoppingCartView!")
-            Button("Show checkout") {
-                viewModel.finish()
-            }
-        }
-        
-    }
+  }
 }

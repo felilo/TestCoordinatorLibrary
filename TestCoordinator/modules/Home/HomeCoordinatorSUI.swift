@@ -27,7 +27,7 @@ import SUICoordinator
 import SwiftUI
 import Combine
 
-class HomeCoordinatorSUI: TabbarCoordinator<HomeRoute2> {
+class HomeCoordinatorSUI: TabbarCoordinator<HomeRouteSUI> {
   
   
   // ---------------------------------------------------------------------

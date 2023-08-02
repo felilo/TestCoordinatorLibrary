@@ -25,7 +25,7 @@
 import SwiftUI
 import SUICoordinator
 
-enum HomeRoute2: CaseIterable, TabbarPage {
+enum HomeRouteSUI: CaseIterable, TabbarPage {
   
   case marketplace
   case settings

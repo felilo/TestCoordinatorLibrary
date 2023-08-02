@@ -25,25 +25,39 @@
 import SwiftUI
 
 struct SettingsHomeView: View {
-    
-    @StateObject var viewModel: SettingsHomeViewModel
-    
-    
-    init(viewModel: SettingsHomeViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
+  
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+  @StateObject var viewModel: SettingsHomeViewModel
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
+  
+  
+  init(viewModel: SettingsHomeViewModel) {
+    self._viewModel = .init(wrappedValue: viewModel)
+  }
+  
+  
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
+  
+  
+  var body: some View {
+    VStack(spacing: 16) {
+      Text("Hello, Settings!")
+      Button("Finish Coordinator") {
+        viewModel.finish()
+      }
+      Button("Restart App") {
+        viewModel.restartApp()
+      }
     }
     
-    var body: some View {
-        VStack(spacing: 16) {
-            Text("Hello, Settings!")
-            Button("Finish Coordinator") {
-                viewModel.finish()
-            }
-            
-            Button("Restart App") {
-                viewModel.restartApp()
-            }
-        }
-        
-    }
+  }
 }

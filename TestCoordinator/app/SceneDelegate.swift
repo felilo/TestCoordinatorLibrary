@@ -33,7 +33,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
-    setupCoordinator(window: window, animated: true)
+    setupCoordinator(animated: true)
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
       self?.mainCoordinator?.startOnboardingFromNotification(message: "Hello")
@@ -41,7 +41,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     
   }
   
-  private func setupCoordinator(window: UIWindow?, animated: Bool = false) {
+  private func setupCoordinator(animated: Bool = false) {
     mainCoordinator = .init()
     setupWindow(controller: mainCoordinator?.root)
     BaseCoordinator.mainCoordinator = mainCoordinator

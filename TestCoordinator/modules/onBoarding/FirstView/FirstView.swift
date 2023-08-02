@@ -26,12 +26,29 @@ import SwiftUI
 
 struct FirstView: View {
   
-  @StateObject var viewModel: FirstViewModel
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
   
+
+  @StateObject var viewModel: FirstViewModel
+
+  
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
+  
+
   init(viewModel: FirstViewModel) {
     self._viewModel = .init(wrappedValue: viewModel)
   }
   
+  
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
+  
+
   var body: some View {
     ZStack {
       Color.yellow.ignoresSafeArea()

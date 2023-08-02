@@ -26,23 +26,46 @@ import SwiftUI
 
 struct HomeTabbarView: View {
   
+  // ---------------------------------------------------------------------
+  // MARK: Typealias
+  // ---------------------------------------------------------------------
   
-  typealias Page = HomeRoute2
+
+  typealias Page = HomeRouteSUI
+
+  
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+
   @StateObject private var viewModel: HomeTabbarViewModel
+  let widthIcon: CGFloat = 22
+
   
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
   
+
   init(viewModel: HomeTabbarViewModel) {
     self._viewModel = .init(wrappedValue: viewModel)
   }
   
-  let widthIcon: CGFloat = 22
+  
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
+  
   
   var body: some View {
     ZStack(alignment: .bottomLeading) {
       VStack(spacing: 8) {
+        
         Color.gray.opacity(0.6)
           .frame(height: 0.3)
         customTabbar()
+        
       }.background(
         .ultraThinMaterial,
         in: RoundedRectangle(cornerRadius: 0, style: .continuous)
@@ -51,17 +74,25 @@ struct HomeTabbarView: View {
   }
   
   
+  // ---------------------------------------------------------------------
+  // MARK: Helper views
+  // ---------------------------------------------------------------------
+  
+  
   private func tabbarButton(@State page: Page, size: CGRect) -> some View {
     Button {
       viewModel.setCurrentPage(page)
     } label: {
+      
       ZStack(alignment: .bottom) {
         VStack(alignment: .center , spacing: 2) {
+          
           page.icon
             .resizable()
             .scaledToFit()
             .frame(width: widthIcon, height: widthIcon)
             .clipped()
+          
           Text(page.title)
             .font(.system(size: 11))
           
@@ -83,8 +114,13 @@ struct HomeTabbarView: View {
       }
     }
   }
+
   
+  // ---------------------------------------------------------------------
+  // MARK: Helper funcs
+  // ---------------------------------------------------------------------
   
+
   private func getWidthButton(with size: CGRect) -> CGFloat {
     size.width / CGFloat(viewModel.pages.count)
   }

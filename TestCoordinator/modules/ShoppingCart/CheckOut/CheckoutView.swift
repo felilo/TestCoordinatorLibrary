@@ -26,14 +26,29 @@ import SwiftUI
 
 struct CheckoutView: View {
   
+  // ---------------------------------------------------------------------
+  // MARK: Properties
+  // ---------------------------------------------------------------------
+  
+
   @StateObject var viewModel: CheckoutViewModel
   
+
+  // ---------------------------------------------------------------------
+  // MARK: Constructor
+  // ---------------------------------------------------------------------
   
+
   init(viewModel: CheckoutViewModel) {
     self._viewModel = .init(wrappedValue: viewModel)
   }
   
+
+  // ---------------------------------------------------------------------
+  // MARK: View
+  // ---------------------------------------------------------------------
   
+
   var body: some View {
     VStack(spacing: 16) {
       Text("Hello, Checkout view!")
@@ -44,8 +59,6 @@ struct CheckoutView: View {
       Button("Finish coordinator") {
         viewModel.finish()
       }
-      
     }
-    
   }
 }

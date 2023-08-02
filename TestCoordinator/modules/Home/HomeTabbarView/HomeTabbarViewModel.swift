@@ -27,7 +27,7 @@ import Foundation
 class HomeTabbarViewModel: ObservableObject {
   
   
-  typealias Route = HomeRoute2
+  typealias Route = HomeRouteSUI
   
   
   // ---------------------------------------------------------------------
